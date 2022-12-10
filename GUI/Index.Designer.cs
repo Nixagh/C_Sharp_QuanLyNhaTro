@@ -59,6 +59,7 @@ namespace GUI {
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTinh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelHost.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -230,6 +231,7 @@ namespace GUI {
             // panelTitlebar
             // 
             this.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTitlebar.Controls.Add(this.button1);
             this.panelTitlebar.Controls.Add(this.btnLogin);
             this.panelTitlebar.Controls.Add(this.btnMaximize);
             this.panelTitlebar.Controls.Add(this.btnMinimize);
@@ -539,6 +541,16 @@ namespace GUI {
             this.label1.TabIndex = 0;
             this.label1.Text = "Tỉnh";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(186, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,6 +622,7 @@ namespace GUI {
         private FontAwesome.Sharp.IconButton btnDonDatPhong;
         private FontAwesome.Sharp.IconButton btnQuanLyTro;
         private FontAwesome.Sharp.IconButton btnLichSuDatPhong;
+        private System.Windows.Forms.Button button1;
     }
 }
 

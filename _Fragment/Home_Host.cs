@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,9 @@ namespace _Fragment {
             InitializeComponent();
             this.host = host;
             button = btnXemChiTiet;
-            pic_Host.ImageLocation = this.host.image;
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+            pic_Host.ImageLocation = Path.Combine(host_, host.image);
             lblName.Text = this.host.name;
             lblAddress.Text = this.host.address.Tinh;
         }

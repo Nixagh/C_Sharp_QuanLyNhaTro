@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,9 @@ namespace GUI.Forms.Host {
         public FormChiTietNhaTro_Host(_Host host) {
             InitializeComponent();
             curHost = host;
-            pic_Host.ImageLocation = host.image;
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+            pic_Host.ImageLocation = Path.Combine(host_, host.image);
             lblName.Text = host.name;
             lblAddress.Text = host.address.Tinh;
             addMotels();

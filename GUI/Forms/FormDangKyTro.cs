@@ -115,10 +115,14 @@ namespace GUI.Forms {
                 MessageBox.Show("Vui lòng chọn Ảnh trọ.", "Infomation.");
                 return;
             }
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            string location = Path.Combine(host_, @"Images\Hosts");
+            DirectoryInfo di = Directory.CreateDirectory(location);
+            string path = Path.Combine(location, Path.GetFileName(imageLocation));
 
-            string path = Path.Combine(@"D:\File luu\!HK4\Dot Net\Web\WebClone_\Images\Hosts", Path.GetFileName(imageLocation));
+            string saveImage = Path.Combine(@"Images\Hosts", Path.GetFileName(imageLocation));
 
-            var result = host.insert(new _Host(txtname.Text, path,
+            var result = host.insert(new _Host(txtname.Text, saveImage,
                                         new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text),
                                         txtPhoneNumber.Text, txtAddress.Text, txtFaceBook.Text,
                                         BUS_User.UserAuth._id));

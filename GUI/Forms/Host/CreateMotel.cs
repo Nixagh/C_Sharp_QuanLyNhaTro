@@ -37,10 +37,15 @@ namespace GUI.Forms.Host {
         }
 
         private void btnCreate_Click(object sender, EventArgs e) {
-            string path = Path.Combine(@"D:\File luu\!HK4\Dot Net\Web\WebClone_\Images\Motels", Path.GetFileName(imageLocation));
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            string location = Path.Combine(host_, @"Images\Motels");
+            DirectoryInfo di = Directory.CreateDirectory(location);
+            string path = Path.Combine(location, Path.GetFileName(imageLocation));
+
+            string saveImage = Path.Combine(@"Images\Motels", Path.GetFileName(imageLocation));
 
             var result = motel.insert(new _Motel(txtName.Text, cmbLoaiPhong.Text, txtDienTich.Text, 
-                                        txtGia.Text, txtGiaDien.Text, txtGiaNuoc.Text, path, hostId));
+                                        txtGia.Text, txtGiaDien.Text, txtGiaNuoc.Text, saveImage, hostId));
 
             if(result != null) {
                 File.Copy(imageLocation, path, true);

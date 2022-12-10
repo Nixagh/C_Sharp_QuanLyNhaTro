@@ -16,6 +16,7 @@ using Newtonsoft.Json;
 using DTO;
 using _Fragment;
 using GUI.Forms.Host;
+using System.IO;
 
 namespace GUI {
     public partial class Index : Form {
@@ -40,7 +41,17 @@ namespace GUI {
             btnMaximize.Visible = false;
             addTinh();
             loadHostItems();
+            
         }
+        private void button1_Click(object sender, EventArgs e) {
+            /*string startupPath = Environment.CurrentDirectory;*/
+            /*string startupPath = System.IO.Directory.GetCurrentDirectory();*/
+            /*string startupPath = Environment.SystemDirectory;*/
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+            MessageBox.Show(projectDirectory);
+        }
+
         //add address into combobox
         dynamic json;
         dynamic Tinh;
@@ -273,5 +284,7 @@ namespace GUI {
             FormChiTietNhaTro_Host f = new FormChiTietNhaTro_Host(result);
             f.Show();
         }
+
+
     }
 }

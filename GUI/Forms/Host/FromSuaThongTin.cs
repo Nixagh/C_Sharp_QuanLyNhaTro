@@ -103,9 +103,11 @@ namespace GUI.Forms.Host {
             string ran = new string(Enumerable.Repeat(chars, 4)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
 
-            string path = Path.Combine(@"D:\File luu\!HK4\Dot Net\Web\WebClone_\Images\Hosts", Path.GetFileName(ran + imageLocation));
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            string location = Path.Combine(host_, @"Images\Hosts");
+            DirectoryInfo di = Directory.CreateDirectory(location);
+            string path = Path.Combine(location, Path.GetFileName(ran + imageLocation));
             
-
             var result = Bus_Host.update(host._id, txtname.Text, new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text),
                 txtAddress.Text, txtPhoneNumber.Text, path, txtFaceBook.Text);
             if (result != null) {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.IO;
 
 namespace _Fragment {
     public partial class Host_Motel : UserControl {
@@ -21,8 +22,10 @@ namespace _Fragment {
         public Host_Motel(_Motel motel) {
             InitializeComponent();
             this.motel = motel;
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
-            picMotel.ImageLocation = motel.image;
+            picMotel.ImageLocation = Path.Combine(host_, motel.image);
+    
             lblName.Text = motel.name;
             lblLoaiPhong.Text = motel.type;
             lblStatus.Text = motel.status;
@@ -35,6 +38,10 @@ namespace _Fragment {
             if(result != null) {
                 MessageBox.Show("Xóa Thành Công.", "Infomation.");
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e) {
+            MessageBox.Show(picMotel.ImageLocation);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,9 @@ namespace _Fragment {
         public Home_Motel(_Motel motel) {
             InitializeComponent();
             this.motel = motel;
-            picMotel.ImageLocation = this.motel.image;
+            string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+            picMotel.ImageLocation = Path.Combine(host_, motel.image);
             lblName.Text = motel.name;
             lblLoaiPhong.Text = motel.type;
             lblDienTich.Text = motel.area;

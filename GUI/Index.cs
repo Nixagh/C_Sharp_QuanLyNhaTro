@@ -285,6 +285,9 @@ namespace GUI {
             f.Show();
         }
 
-
+        private void btnDonDatPhong_Click(object sender, EventArgs e) {
+            DonDatPhong f = new DonDatPhong();
+            f.Show();
+        }
     }
 }

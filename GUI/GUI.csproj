@@ -162,6 +162,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DonDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonDatPhong.Designer.cs">
+      <DependentUpon>DonDatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormChiTietNhaTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     <Compile Include="Forms\Host\FromSuaThongTin.Designer.cs">
       <DependentUpon>FromSuaThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Host\ThongTinPhongTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Host\ThongTinPhongTro.Designer.cs">
+      <DependentUpon>ThongTinPhongTro.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DonDatPhong.resx">
+      <DependentUpon>DonDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormChiTietNhaTro.resx">
       <DependentUpon>FormChiTietNhaTro.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Host\FromSuaThongTin.resx">
       <DependentUpon>FromSuaThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Host\ThongTinPhongTro.resx">
+      <DependentUpon>ThongTinPhongTro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_Login.resx">
       <DependentUpon>GUI_Login.cs</DependentUpon>
@@ -286,7 +304,7 @@
       <Name>DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\_Fragment\_Fragment.csproj">
-      <Project>{604B921D-DE30-4647-B0B8-F0AE6B94B197}</Project>
+      <Project>{604b921d-de30-4647-b0b8-f0ae6b94b197}</Project>
       <Name>_Fragment</Name>
     </ProjectReference>
   </ItemGroup>

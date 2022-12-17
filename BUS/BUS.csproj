@@ -141,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_Booking.cs" />
     <Compile Include="BUS_Host.cs" />
     <Compile Include="BUS_Motel.cs" />
     <Compile Include="BUS_User.cs" />

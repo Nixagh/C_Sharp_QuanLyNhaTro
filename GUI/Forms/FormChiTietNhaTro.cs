@@ -32,7 +32,7 @@ namespace GUI.Forms {
 
         private void addMotels() {
             flowLayoutPanel1.Controls.Clear();
-            List<_Motel> motels = motel.getByHostId(curHost._id);
+            List<_Motel> motels = motel.getByHostIdAndStatus(curHost._id);
             foreach (_Motel m in motels)
                 flowLayoutPanel1.Controls.Add(new Home_Motel(m));
         }

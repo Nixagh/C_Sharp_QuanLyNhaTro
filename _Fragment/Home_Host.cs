@@ -13,26 +13,22 @@ using System.Windows.Forms;
 namespace _Fragment {
     public partial class Home_Host : UserControl {
         public _Host host { get; set; }
-        private Button button;
 
         public Button B {
             get {
-                return button;
+                return btnXemChiTiet;
             }
             set {
-                button = value;
-                btnXemChiTiet = button;
+                btnXemChiTiet = value;
             }
         }
 
         public Home_Host() {
             InitializeComponent();
-            button = btnXemChiTiet;
         }
         public Home_Host(_Host host) {
             InitializeComponent();
             this.host = host;
-            button = btnXemChiTiet;
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
             pic_Host.ImageLocation = Path.Combine(host_, host.image);

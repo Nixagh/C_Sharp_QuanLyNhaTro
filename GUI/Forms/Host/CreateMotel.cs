@@ -20,7 +20,7 @@ namespace GUI.Forms.Host {
         string imageLocation;
 
         public static CreateMotel getInstance(ObjectId id) {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed)
                     _instance = new CreateMotel();
                 _instance.BringToFront();
                 hostId = id;

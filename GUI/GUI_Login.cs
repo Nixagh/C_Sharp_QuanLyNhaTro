@@ -19,6 +19,8 @@ namespace GUI {
                     instance = new GUI_Login();
                 }
                 instance.WindowState = FormWindowState.Normal;
+                instance.txtusername.Text = "cooling";
+                instance.txtpassword.Text = "123";
                 instance.BringToFront();
                 instance.txtusername.Focus();
                 return instance;

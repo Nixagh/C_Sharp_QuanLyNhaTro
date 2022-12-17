@@ -12,6 +12,7 @@ using _Fragment;
 using BUS;
 using DTO;
 
+
 namespace GUI.Forms.Host {
     public partial class FormChiTietNhaTro_Host : Form {
         BUS_Host host = new BUS_Host();
@@ -32,8 +33,15 @@ namespace GUI.Forms.Host {
         private void addMotels() {
             fpanelPhongTro.Controls.Clear();
             List<_Motel> motels = motel.getByHostId(curHost._id);
-            foreach(_Motel m in motels)
-                fpanelPhongTro.Controls.Add(new Host_Motel(m));
+            foreach (_Motel m in motels) {
+                Host_Motel hm = new Host_Motel(m);
+                hm.B.Click += (s, e) => {
+                    ThongTinPhongTro f = new ThongTinPhongTro(m);
+                    f.Show();
+                };
+                fpanelPhongTro.Controls.Add(hm);
+            }
+
         }
 
 

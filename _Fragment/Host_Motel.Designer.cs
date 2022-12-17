@@ -130,9 +130,8 @@ namespace _Fragment {
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(106, 38);
             this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "Đặt Phòng";
             this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 

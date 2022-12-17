@@ -15,6 +15,16 @@ namespace _Fragment {
     public partial class Host_Motel : UserControl {
         BUS_Motel Bmotel = new BUS_Motel();
         private _Motel motel;
+
+        public Button B {
+            get {
+                return btnSua;
+            }
+            set {
+                btnSua = value;
+            }
+        }
+
         public Host_Motel() {
             InitializeComponent();
         }
@@ -22,6 +32,7 @@ namespace _Fragment {
         public Host_Motel(_Motel motel) {
             InitializeComponent();
             this.motel = motel;
+
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
             picMotel.ImageLocation = Path.Combine(host_, motel.image);
@@ -38,10 +49,6 @@ namespace _Fragment {
             if(result != null) {
                 MessageBox.Show("Xóa Thành Công.", "Infomation.");
             }
-        }
-
-        private void btnSua_Click(object sender, EventArgs e) {
-            MessageBox.Show(picMotel.ImageLocation);
         }
     }
 }

@@ -143,6 +143,7 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Connect.cs" />
+    <Compile Include="DAL_Booking.cs" />
     <Compile Include="DAL_Host.cs" />
     <Compile Include="DAL_Motel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

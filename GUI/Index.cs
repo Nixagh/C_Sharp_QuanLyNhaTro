@@ -94,8 +94,8 @@ namespace GUI {
 
         private void loadHostItems() {
             fPanelHome.Controls.Clear();
-            List<_Host> hosts = host.getAllByPost();
-            foreach (_Host h in hosts) {
+            List<Host> hosts = host.getAllByPost();
+            foreach (Host h in hosts) {
                 Home_Host hh = new Home_Host(h);
                     hh.B.Click += (s, e) => {
                         FormChiTietNhaTro f = new FormChiTietNhaTro(h);
@@ -280,7 +280,7 @@ namespace GUI {
         }
 
         private void btnQuanLyTro_Click_1(object sender, EventArgs e) {
-            _Host result = host.findByUserId(BUS_User.UserAuth._id);
+            Host result = host.findByUserId(BUS_User.UserAuth._id);
             FormChiTietNhaTro_Host f = new FormChiTietNhaTro_Host(result);
             f.Show();
         }

@@ -8,7 +8,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DTO {
-    public class _Host {
+    public class Host {
         [BsonId]
         public ObjectId _id { get; set; }
         [BsonElement("name")]
@@ -32,7 +32,7 @@ namespace DTO {
         [BsonElement("descrption")]
         public bool descrption { get; set; } = false;
 
-        public _Host(string name, string image, Address address, 
+        public Host(string name, string image, Address address, 
                     string phoneNumber, string addressDetail, string facebook, ObjectId user_Id) {
             this.name = name;
             this.image = image;

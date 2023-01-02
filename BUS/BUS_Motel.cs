@@ -10,16 +10,16 @@ using MongoDB.Driver;
 
 namespace BUS {
     public class BUS_Motel {
-        DAL_Motel motel = new DAL_Motel(Connect.getInstance.getDataBase().GetCollection<_Motel>("Motel"));
+        DAL_Motel motel = new DAL_Motel(Connect.getInstance.getDataBase().GetCollection<Motel>("Motel"));
 
-        public Task insert(_Motel newMotel) => motel.insert(newMotel);
-        public List<_Motel> getByHostId(ObjectId _id) {
-            FilterDefinition<_Motel> filter = Builders<_Motel>.Filter.Eq(m => m.hostId, _id);
+        public Task insert(Motel newMotel) => motel.insert(newMotel);
+        public List<Motel> getByHostId(ObjectId _id) {
+            FilterDefinition<Motel> filter = Builders<Motel>.Filter.Eq(m => m.hostId, _id);
             return motel.findByConditions(filter);
         }
-        public List<_Motel> getByHostIdAndStatus(ObjectId _id) {
-            FilterDefinition<_Motel> filter = Builders<_Motel>.Filter.Eq(m => m.hostId, _id) &
-                                              Builders<_Motel>.Filter.Eq(m => m.status, "Trống");
+        public List<Motel> getByHostIdAndStatus(ObjectId _id) {
+            FilterDefinition<Motel> filter = Builders<Motel>.Filter.Eq(m => m.hostId, _id) &
+                                              Builders<Motel>.Filter.Eq(m => m.status, "Trống");
             return motel.findByConditions(filter);
         }
         public Task delete(ObjectId _id) {
@@ -28,9 +28,9 @@ namespace BUS {
         }
 
         public void updateStatus(ObjectId id, string status) {
-            FilterDefinition<_Motel> filter = Builders<_Motel>.Filter.Eq(m => m._id, id);
+            FilterDefinition<Motel> filter = Builders<Motel>.Filter.Eq(m => m._id, id);
 
-            UpdateDefinition<_Motel> update = Builders<_Motel>.Update.Set(m => m.status, status);
+            UpdateDefinition<Motel> update = Builders<Motel>.Update.Set(m => m.status, status);
             _ = motel.update(filter, update);
         }
     }

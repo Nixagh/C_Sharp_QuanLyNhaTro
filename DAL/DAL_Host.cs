@@ -8,8 +8,8 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace DAL {
-    public class DAL_Host : BaseRepository<_Host> {
-        public DAL_Host(IMongoCollection<_Host> collection) : base(collection) {
+    public class DAL_Host : BaseRepository<Host> {
+        public DAL_Host(IMongoCollection<Host> collection) : base(collection) {
             this.collection = collection;
         }
 

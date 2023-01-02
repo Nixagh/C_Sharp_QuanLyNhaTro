@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DTO {
-    public class _Booking {
+    public class Booking {
         [BsonId]
         public ObjectId _id { get; set; }
         [BsonElement("customerName")]
@@ -27,7 +27,7 @@ namespace DTO {
         [BsonElement("ngaytra")]
         public string ngaytra { get; set; }
 
-        public _Booking(
+        public Booking(
             string customerName, 
             string sodienthoai,
             string motelName,

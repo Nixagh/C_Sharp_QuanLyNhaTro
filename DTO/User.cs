@@ -7,7 +7,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DTO {
-    public class _User {
+    public class User {
         [BsonId]
         public ObjectId _id { get; set; }
         [BsonElement("username")]
@@ -25,7 +25,7 @@ namespace DTO {
         [BsonElement("Role")]
         public string Role { get; set; }
 
-        public _User(string username, string password, 
+        public User(string username, string password, 
                         string name, string email, 
                         string phoneNumber, string hostId, string role) {
             this.username = username;
@@ -37,7 +37,7 @@ namespace DTO {
             Role = role;
         }
 
-        public _User() { }
+        public User() { }
     }
 
 }

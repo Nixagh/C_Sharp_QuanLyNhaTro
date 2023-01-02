@@ -10,14 +10,14 @@ using MongoDB.Bson;
 
 namespace BUS {
     public class BUS_Host {
-        DAL_Host host = new DAL_Host(Connect.getInstance.getDataBase().GetCollection<_Host>("Host"));
+        DAL_Host host = new DAL_Host(Connect.getInstance.getDataBase().GetCollection<Host>("Host"));
 
-        public Task insert(_Host newHost) => host.insert(newHost);
+        public Task insert(Host newHost) => host.insert(newHost);
 
-        public List<_Host> getAll() => host.findAll(); 
+        public List<Host> getAll() => host.findAll(); 
 
-        public _Host findByUserId(ObjectId userId) {
-            FilterDefinition<_Host> filters = Builders<_Host>.Filter.Eq(h => h.user_Id, userId);
+        public Host findByUserId(ObjectId userId) {
+            FilterDefinition<Host> filters = Builders<Host>.Filter.Eq(h => h.user_Id, userId);
             return host.findOne(filters);
         }
 
@@ -25,14 +25,14 @@ namespace BUS {
             return host.updatePost(userId, status);
         }
 
-        public List<_Host> getAllByPost() {
-            FilterDefinition<_Host> filters = Builders<_Host>.Filter.Eq(h => h.isPost, true);
+        public List<Host> getAllByPost() {
+            FilterDefinition<Host> filters = Builders<Host>.Filter.Eq(h => h.isPost, true);
             return host.findByConditions(filters);
         }
 
         public Task update(ObjectId _id, string name, Address address, string addressDetail, string facebook, string image, string phoneNum) {
-            FilterDefinition<_Host> filters = Builders<_Host>.Filter.Eq(h => h._id, _id);
-            UpdateDefinition<_Host> updates = Builders<_Host>.Update
+            FilterDefinition<Host> filters = Builders<Host>.Filter.Eq(h => h._id, _id);
+            UpdateDefinition<Host> updates = Builders<Host>.Update
                                                     .Set(h => h.name, name)
                                                     .Set(h => h.address, address)
                                                     .Set(h => h.addressDetail, addressDetail)

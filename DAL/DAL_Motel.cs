@@ -7,8 +7,8 @@ using DTO;
 using MongoDB.Driver;
 
 namespace DAL {
-    public class DAL_Motel : BaseRepository<_Motel>{
-        public DAL_Motel(IMongoCollection<_Motel> collection) : base(collection) {
+    public class DAL_Motel : BaseRepository<Motel>{
+        public DAL_Motel(IMongoCollection<Motel> collection) : base(collection) {
             this.collection = collection;
         }
     }

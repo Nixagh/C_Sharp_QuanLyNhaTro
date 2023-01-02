@@ -29,7 +29,7 @@ namespace GUI {
         BUS_User user = new BUS_User();
 
         private void frmUser_Load(object sender, EventArgs e) {
-            dgvUser.DataSource = user.findAll().ToList<_User>();
+            dgvUser.DataSource = user.findAll().ToList<User>();
             /*user.insert(new _User("nghia", "123", "nghiapro", "nghia@gmail.com", "01234", null, "User"));*/
         }
     }

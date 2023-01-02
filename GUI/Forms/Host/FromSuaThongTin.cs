@@ -15,13 +15,13 @@ using System.IO;
 
 namespace GUI.Forms.Host {
     public partial class FromSuaThongTin : Form {
-        private _Host host;
+        private DTO.Host host;
         private BUS_Host Bus_Host = new BUS_Host();
 
         public FromSuaThongTin() {
             InitializeComponent();
         }
-        public FromSuaThongTin(_Host host) {
+        public FromSuaThongTin(DTO.Host host) {
             InitializeComponent();
 
             this.host = host;

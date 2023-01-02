@@ -14,7 +14,7 @@ using System.IO;
 namespace _Fragment {
     public partial class Host_Motel : UserControl {
         BUS_Motel Bmotel = new BUS_Motel();
-        private _Motel motel;
+        private Motel motel;
 
         public Button B {
             get {
@@ -29,7 +29,7 @@ namespace _Fragment {
             InitializeComponent();
         }
 
-        public Host_Motel(_Motel motel) {
+        public Host_Motel(Motel motel) {
             InitializeComponent();
             this.motel = motel;
 

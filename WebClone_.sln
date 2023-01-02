@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{C236DBFF-1574-43A2-A050-BDDB69421054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Fragment", "_Fragment\_Fragment.csproj", "{604B921D-DE30-4647-B0B8-F0AE6B94B197}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fragment", "_Fragment\Fragment.csproj", "{604B921D-DE30-4647-B0B8-F0AE6B94B197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

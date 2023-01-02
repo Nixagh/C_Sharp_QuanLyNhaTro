@@ -9,7 +9,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace DTO {
-    public class _Motel {
+    public class Motel {
         [BsonId]
         public ObjectId _id { get; set; }
         [BsonElement("name")]
@@ -31,7 +31,7 @@ namespace DTO {
         [BsonElement("status")]
         public string status { get; set; } = "Trống";
 
-        public _Motel(string name, string type, string area, string price, string priceE, string priceW, string image, ObjectId hostId) {
+        public Motel(string name, string type, string area, string price, string priceE, string priceW, string image, ObjectId hostId) {
             this.name = name;
             this.type = type;
             this.area = area;
@@ -41,6 +41,6 @@ namespace DTO {
             this.image = image;
             this.hostId = hostId;
         }
-        public _Motel() { }
+        public Motel() { }
     }
 }

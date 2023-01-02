@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL {
-    public class DAL_Booking : BaseRepository<_Booking>{
-        public DAL_Booking(IMongoCollection<_Booking> collection) : base(collection) {
+    public class DAL_Booking : BaseRepository<Booking>{
+        public DAL_Booking(IMongoCollection<Booking> collection) : base(collection) {
             this.collection = collection;
         }
     }

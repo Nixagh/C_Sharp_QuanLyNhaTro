@@ -40,11 +40,14 @@ namespace GUI.Forms.Host {
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
             string location = Path.Combine(host_, @"Images\Motels");
             DirectoryInfo di = Directory.CreateDirectory(location);
+            if(imageLocation == null) {
+                MessageBox.Show("Vui lòng chọn ảnh");
+                return;
+            }
             string path = Path.Combine(location, Path.GetFileName(imageLocation));
-
             string saveImage = Path.Combine(@"Images\Motels", Path.GetFileName(imageLocation));
 
-            var result = motel.insert(new _Motel(txtName.Text, cmbLoaiPhong.Text, txtDienTich.Text, 
+            var result = motel.insert(new Motel(txtName.Text, cmbLoaiPhong.Text, txtDienTich.Text, 
                                         txtGia.Text, txtGiaDien.Text, txtGiaNuoc.Text, saveImage, hostId));
 
             if(result != null) {

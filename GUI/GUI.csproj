@@ -303,9 +303,9 @@
       <Project>{c236dbff-1574-43a2-a050-bddb69421054}</Project>
       <Name>DTO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\_Fragment\_Fragment.csproj">
+    <ProjectReference Include="..\_Fragment\Fragment.csproj">
       <Project>{604b921d-de30-4647-b0b8-f0ae6b94b197}</Project>
-      <Name>_Fragment</Name>
+      <Name>Fragment</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

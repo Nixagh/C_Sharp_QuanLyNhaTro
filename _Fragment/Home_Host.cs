@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace _Fragment {
     public partial class Home_Host : UserControl {
-        public _Host host { get; set; }
+        public Host host { get; set; }
 
         public Button B {
             get {
@@ -26,7 +26,7 @@ namespace _Fragment {
         public Home_Host() {
             InitializeComponent();
         }
-        public Home_Host(_Host host) {
+        public Home_Host(Host host) {
             InitializeComponent();
             this.host = host;
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;

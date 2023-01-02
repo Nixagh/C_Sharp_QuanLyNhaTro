@@ -17,9 +17,9 @@ namespace GUI.Forms.Host {
     public partial class FormChiTietNhaTro_Host : Form {
         BUS_Host host = new BUS_Host();
         BUS_Motel motel = new BUS_Motel();
-        _Host curHost;
+        DTO.Host curHost;
 
-        public FormChiTietNhaTro_Host(_Host host) {
+        public FormChiTietNhaTro_Host(DTO.Host host) {
             InitializeComponent();
             curHost = host;
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
@@ -32,8 +32,8 @@ namespace GUI.Forms.Host {
 
         private void addMotels() {
             fpanelPhongTro.Controls.Clear();
-            List<_Motel> motels = motel.getByHostId(curHost._id);
-            foreach (_Motel m in motels) {
+            List<Motel> motels = motel.getByHostId(curHost._id);
+            foreach (Motel m in motels) {
                 Host_Motel hm = new Host_Motel(m);
                 hm.B.Click += (s, e) => {
                     ThongTinPhongTro f = new ThongTinPhongTro(m);

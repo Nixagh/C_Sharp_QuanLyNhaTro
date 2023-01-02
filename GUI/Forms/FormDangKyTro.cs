@@ -122,7 +122,7 @@ namespace GUI.Forms {
 
             string saveImage = Path.Combine(@"Images\Hosts", Path.GetFileName(imageLocation));
 
-            var result = host.insert(new _Host(txtname.Text, saveImage,
+            var result = host.insert(new DTO.Host(txtname.Text, saveImage,
                                         new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text),
                                         txtPhoneNumber.Text, txtAddress.Text, txtFaceBook.Text,
                                         BUS_User.UserAuth._id));

@@ -126,10 +126,11 @@ namespace GUI.Forms {
                                         new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text),
                                         txtPhoneNumber.Text, txtAddress.Text, txtFaceBook.Text,
                                         BUS_User.UserAuth._id));
-
+            BUS_User user = new BUS_User();
+            user.updateRole(BUS_User.UserAuth._id, "Host");
             if (result != null) {
                 File.Copy(imageLocation, path, true);
-                MessageBox.Show("Đăng ký thành công", "Infomation.");
+                MessageBox.Show("Đăng ký thành công, Vui lòng logout và đăng nhập lại", "Infomation.");
                 this.Close();
             }
         }

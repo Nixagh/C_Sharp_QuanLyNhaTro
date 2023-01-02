@@ -26,7 +26,6 @@ namespace GUI {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnLichSuDatPhong = new FontAwesome.Sharp.IconButton();
             this.panelHost = new System.Windows.Forms.Panel();
             this.btnDonDatPhong = new FontAwesome.Sharp.IconButton();
             this.btnQuanLyTro = new FontAwesome.Sharp.IconButton();
@@ -72,7 +71,6 @@ namespace GUI {
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.btnLichSuDatPhong);
             this.panelMenu.Controls.Add(this.panelHost);
             this.panelMenu.Controls.Add(this.btnDangKyTro);
             this.panelMenu.Controls.Add(this.btnLogout);
@@ -82,27 +80,6 @@ namespace GUI {
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(292, 1041);
             this.panelMenu.TabIndex = 0;
-            // 
-            // btnLichSuDatPhong
-            // 
-            this.btnLichSuDatPhong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLichSuDatPhong.FlatAppearance.BorderSize = 0;
-            this.btnLichSuDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichSuDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichSuDatPhong.ForeColor = System.Drawing.Color.White;
-            this.btnLichSuDatPhong.IconChar = FontAwesome.Sharp.IconChar.ScrewdriverWrench;
-            this.btnLichSuDatPhong.IconColor = System.Drawing.Color.White;
-            this.btnLichSuDatPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLichSuDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichSuDatPhong.Location = new System.Drawing.Point(0, 320);
-            this.btnLichSuDatPhong.Name = "btnLichSuDatPhong";
-            this.btnLichSuDatPhong.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLichSuDatPhong.Size = new System.Drawing.Size(292, 60);
-            this.btnLichSuDatPhong.TabIndex = 12;
-            this.btnLichSuDatPhong.Text = "Quản Lý Đơn Đặt Phòng";
-            this.btnLichSuDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLichSuDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLichSuDatPhong.UseVisualStyleBackColor = true;
             // 
             // panelHost
             // 
@@ -574,7 +551,6 @@ namespace GUI {
         private System.Windows.Forms.Panel panelHost;
         private FontAwesome.Sharp.IconButton btnDonDatPhong;
         private FontAwesome.Sharp.IconButton btnQuanLyTro;
-        private FontAwesome.Sharp.IconButton btnLichSuDatPhong;
     }
 }
 

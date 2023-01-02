@@ -126,12 +126,10 @@ namespace GUI {
                 if (BUS_User.UserAuth.Role.Equals("Host")) {
                     panelHost.Visible = isLogin;
                     btnDangKyTro.Visible = !isLogin;
-                } else
-                    btnLichSuDatPhong.Visible = isLogin;
+                }
             }
             else { 
                 panelHost.Visible = isLogin;
-                btnLichSuDatPhong.Visible = isLogin;
                 btnDangKyTro.Visible = !isLogin;
             }
         }

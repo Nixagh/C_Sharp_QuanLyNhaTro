@@ -37,5 +37,11 @@ namespace BUS {
             return (result != null && result.Count != 0);
         }
 
+        public void updateRole(MongoDB.Bson.ObjectId _id, string v) {
+            var filters = Builders<User>.Filter.Eq(u => u._id, _id);
+            var updates = Builders<User>.Update.Set(u => u.Role, v);
+
+            var result = user.update(filters, updates);
+        }
     }
 }

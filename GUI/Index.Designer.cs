@@ -46,10 +46,7 @@ namespace GUI {
             this.fPanelHome = new System.Windows.Forms.FlowLayoutPanel();
             this.panelPaging = new System.Windows.Forms.Panel();
             this.panelSearch = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnFiltersAddress = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -388,10 +385,7 @@ namespace GUI {
             this.panelSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelSearch.Controls.Add(this.label5);
-            this.panelSearch.Controls.Add(this.textBox3);
-            this.panelSearch.Controls.Add(this.textBox2);
-            this.panelSearch.Controls.Add(this.textBox1);
+            this.panelSearch.Controls.Add(this.txtSearch);
             this.panelSearch.Controls.Add(this.btnFind);
             this.panelSearch.Controls.Add(this.btnFiltersAddress);
             this.panelSearch.Controls.Add(this.label4);
@@ -406,40 +400,13 @@ namespace GUI {
             this.panelSearch.Size = new System.Drawing.Size(1592, 104);
             this.panelSearch.TabIndex = 0;
             // 
-            // label5
+            // txtSearch
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(989, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Mức Giá:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(1080, 6);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 35);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1238, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 35);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(533, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 38);
-            this.textBox1.TabIndex = 3;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(533, 59);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(396, 38);
+            this.txtSearch.TabIndex = 3;
             // 
             // btnFind
             // 
@@ -450,16 +417,18 @@ namespace GUI {
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Tìm Kiếm";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnFiltersAddress
             // 
             this.btnFiltersAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltersAddress.Location = new System.Drawing.Point(1415, 7);
+            this.btnFiltersAddress.Location = new System.Drawing.Point(945, 6);
             this.btnFiltersAddress.Name = "btnFiltersAddress";
             this.btnFiltersAddress.Size = new System.Drawing.Size(105, 32);
             this.btnFiltersAddress.TabIndex = 2;
             this.btnFiltersAddress.Text = "Filters";
             this.btnFiltersAddress.UseVisualStyleBackColor = true;
+            this.btnFiltersAddress.Click += new System.EventHandler(this.btnFiltersAddress_Click);
             // 
             // label4
             // 
@@ -601,12 +570,9 @@ namespace GUI {
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFiltersAddress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnFind;
         private FontAwesome.Sharp.IconButton btnDangKyTro;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panelHost;
         private FontAwesome.Sharp.IconButton btnDonDatPhong;
         private FontAwesome.Sharp.IconButton btnQuanLyTro;

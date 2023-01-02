@@ -289,5 +289,34 @@ namespace GUI {
             DonDatPhong f = new DonDatPhong();
             f.Show();
         }
+
+        private void loadHomeItemsWithSearch(Address address, String key) {
+            fPanelHome.Controls.Clear();
+            List<Host> hosts = new List<Host>();
+            if (address != null)
+                hosts = host.getByPostAndAddress(address);
+            if (!string.IsNullOrEmpty(key))
+                hosts = host.getByPostAndSearch(key);
+
+            foreach (Host h in hosts) {
+                    Home_Host hh = new Home_Host(h);
+                    hh.B.Click += (s, e) => {
+                        FormChiTietNhaTro f = new FormChiTietNhaTro(h);
+                        f.Show();
+                    };
+                    fPanelHome.Controls.Add(hh);
+            }
+        }
+
+        private void btnFiltersAddress_Click(object sender, EventArgs e) {
+            loadHomeItemsWithSearch(new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text), "");    
+        }
+
+        private void btnFind_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(txtSearch.Text)) 
+                loadHostItems();
+            else
+                loadHomeItemsWithSearch(null, txtSearch.Text);
+        }
     }
 }

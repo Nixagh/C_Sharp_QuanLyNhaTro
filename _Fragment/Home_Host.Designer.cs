@@ -27,12 +27,8 @@ namespace _Fragment {
             this.pic_Host = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblMinPrice = new System.Windows.Forms.Label();
-            this.lblMaxPrice = new System.Windows.Forms.Label();
             this.btnXemChiTiet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Host)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pic_Host
@@ -67,37 +63,6 @@ namespace _Fragment {
             this.lblAddress.Text = "Address";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.lblMinPrice);
-            this.groupBox1.Controls.Add(this.lblMaxPrice);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 260);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 47);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Mức Giá:";
-            // 
-            // lblMinPrice
-            // 
-            this.lblMinPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinPrice.Location = new System.Drawing.Point(29, 20);
-            this.lblMinPrice.Name = "lblMinPrice";
-            this.lblMinPrice.Size = new System.Drawing.Size(70, 20);
-            this.lblMinPrice.TabIndex = 0;
-            this.lblMinPrice.Text = "MinPrice";
-            // 
-            // lblMaxPrice
-            // 
-            this.lblMaxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxPrice.Location = new System.Drawing.Point(172, 20);
-            this.lblMaxPrice.Name = "lblMaxPrice";
-            this.lblMaxPrice.Size = new System.Drawing.Size(70, 20);
-            this.lblMaxPrice.TabIndex = 0;
-            this.lblMaxPrice.Text = "MaxPrice";
-            // 
             // btnXemChiTiet
             // 
             this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -118,7 +83,6 @@ namespace _Fragment {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnXemChiTiet);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pic_Host);
@@ -126,7 +90,6 @@ namespace _Fragment {
             this.Name = "Home_Host";
             this.Size = new System.Drawing.Size(300, 350);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Host)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -136,9 +99,6 @@ namespace _Fragment {
         private System.Windows.Forms.PictureBox pic_Host;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblMinPrice;
-        private System.Windows.Forms.Label lblMaxPrice;
         private System.Windows.Forms.Button btnXemChiTiet;
     }
 }

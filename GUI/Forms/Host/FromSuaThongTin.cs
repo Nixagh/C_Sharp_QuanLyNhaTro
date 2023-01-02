@@ -33,9 +33,9 @@ namespace GUI.Forms.Host {
             txtFaceBook.Text = host.facebook;
             txtPhoneNumber.Text = host.phoneNumber;
 
-            cmbHuyen.DisplayMember=  host.address.Huyen;
-            cmbTinh.DisplayMember = host.address.Tinh;
-            cmbXa.DisplayMember = host.address.Xa;
+            cmbHuyen.Text =  host.address.Huyen;
+            cmbTinh.Text = host.address.Tinh;
+            cmbXa.Text = host.address.Xa;
             addTinh();
         }
 
@@ -102,14 +102,13 @@ namespace GUI.Forms.Host {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             string ran = new string(Enumerable.Repeat(chars, 4)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
-
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
             string location = Path.Combine(host_, @"Images\Hosts");
-            DirectoryInfo di = Directory.CreateDirectory(location);
-            string path = Path.Combine(location, Path.GetFileName(ran + imageLocation));
-            
+            string path = Path.Combine(location, Path.GetFileName(imageLocation));
+            string saveImage = Path.Combine(@"Images\Hosts", Path.GetFileName(imageLocation));
+
             var result = Bus_Host.update(host._id, txtname.Text, new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text),
-                txtAddress.Text, txtPhoneNumber.Text, path, txtFaceBook.Text);
+                txtAddress.Text, txtFaceBook.Text, saveImage, txtPhoneNumber.Text);
             if (result != null) {
                 File.Copy(imageLocation, path, true);
                 MessageBox.Show("Cập nhật thành công", "Infomation.");

@@ -27,9 +27,10 @@ namespace BUS {
             return motel.deleteById(_id);
         }
 
-        public void updateStatus(ObjectId id) {
+        public void updateStatus(ObjectId id, string status) {
             FilterDefinition<_Motel> filter = Builders<_Motel>.Filter.Eq(m => m._id, id);
-            UpdateDefinition<_Motel> update = Builders<_Motel>.Update.Set(m => m.status, "Bận");
+
+            UpdateDefinition<_Motel> update = Builders<_Motel>.Update.Set(m => m.status, status);
             _ = motel.update(filter, update);
         }
     }

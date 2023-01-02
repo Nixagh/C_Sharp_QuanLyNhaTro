@@ -35,7 +35,5 @@ namespace _Fragment {
             lblName.Text = this.host.name;
             lblAddress.Text = this.host.address.Tinh;
         }
-        private void button1_Click(object sender, EventArgs e) {
-        }
     }
 }

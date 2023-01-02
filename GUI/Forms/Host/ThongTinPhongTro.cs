@@ -72,7 +72,7 @@ namespace GUI.Forms.Host {
 
             //lưu đơn
             Task result = booking.save(new _Booking(name, sdt,curMotel.name, curMotel._id, false, start, end, ""));
-            motel.updateStatus(curMotel._id);
+            motel.updateStatus(curMotel._id, "Bận");
             MessageBox.Show("Lưu Đơn Thành Công.", "Informations");
             this.Close();
         }
@@ -87,7 +87,8 @@ namespace GUI.Forms.Host {
         private void btnTraPhong_Click(object sender, EventArgs e) {
             _Booking result = booking.getByMotel_IdAndStatus(curMotel._id, false);
             Task update = booking.updateStatus(result._id);
-            if(Task.CompletedTask != null) { 
+            if(Task.CompletedTask != null) {
+                motel.updateStatus(curMotel._id, "Trống");
                 MessageBox.Show("Trả Phòng Thành Công", "informations.");
                 this.Close();
             } else

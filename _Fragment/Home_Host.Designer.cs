@@ -111,7 +111,6 @@ namespace _Fragment {
             this.btnXemChiTiet.TabIndex = 4;
             this.btnXemChiTiet.Text = "Xem Chi Tiết";
             this.btnXemChiTiet.UseVisualStyleBackColor = false;
-            this.btnXemChiTiet.Click += new System.EventHandler(this.button1_Click);
             // 
             // Home_Host
             // 

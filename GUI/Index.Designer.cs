@@ -239,7 +239,6 @@ namespace GUI {
             this.panelTitlebar.Name = "panelTitlebar";
             this.panelTitlebar.Size = new System.Drawing.Size(1612, 80);
             this.panelTitlebar.TabIndex = 1;
-            this.panelTitlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnLogin
             // 
@@ -519,13 +518,12 @@ namespace GUI {
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitlebar);
             this.Controls.Add(this.panelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.Index_Activated);
-            this.Resize += new System.EventHandler(this.FormMainMenu_Resize);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelHost.ResumeLayout(false);

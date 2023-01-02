@@ -33,9 +33,10 @@ namespace GUI.Forms.Host {
             txtFaceBook.Text = host.facebook;
             txtPhoneNumber.Text = host.phoneNumber;
 
-            cmbHuyen.Text =  host.address.Huyen;
-            cmbTinh.Text = host.address.Tinh;
-            cmbXa.Text = host.address.Xa;
+            txtHuyen.Text =  host.address.Huyen;
+            txtTinh.Text = host.address.Tinh;
+            txtXa.Text = host.address.Xa;
+
             addTinh();
         }
 
@@ -98,16 +99,16 @@ namespace GUI.Forms.Host {
         }
 
         private void btnDangKy_Click(object sender, EventArgs e) {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            string ran = new string(Enumerable.Repeat(chars, 4)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
+            Address saveAddress = new Address(txtTinh.Text, txtHuyen.Text, txtXa.Text);
+            if (!string.IsNullOrEmpty(cmbXa.Text))
+                saveAddress = new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text);
+
             string host_ = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
             string location = Path.Combine(host_, @"Images\Hosts");
             string path = Path.Combine(location, Path.GetFileName(imageLocation));
             string saveImage = Path.Combine(@"Images\Hosts", Path.GetFileName(imageLocation));
 
-            var result = Bus_Host.update(host._id, txtname.Text, new Address(cmbTinh.Text, cmbHuyen.Text, cmbXa.Text),
+            var result = Bus_Host.update(host._id, txtname.Text, saveAddress,
                 txtAddress.Text, txtFaceBook.Text, saveImage, txtPhoneNumber.Text);
             if (result != null) {
                 File.Copy(imageLocation, path, true);

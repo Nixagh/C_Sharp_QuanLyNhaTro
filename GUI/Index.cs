@@ -20,38 +20,15 @@ using System.IO;
 
 namespace GUI {
     public partial class Index : Form {
-        //Fields
-        private IconButton currentBtn;
-        private Panel leftBorderBtn;
-        private Form currentChildForm;
-        private BUS_Host host;
-        //Constructor
+
+        private BUS_Host host = new BUS_Host();
         public Index() {
             InitializeComponent();
-            host = new BUS_Host();
-            leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
-            panelMenu.Controls.Add(leftBorderBtn);
-            //Form
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             lock_Unlock(BUS_User.isLogin);
-            btnMaximize.Visible = false;
             addTinh();
             loadHostItems();
             
         }
-        private void button1_Click(object sender, EventArgs e) {
-            /*string startupPath = Environment.CurrentDirectory;*/
-            /*string startupPath = System.IO.Directory.GetCurrentDirectory();*/
-            /*string startupPath = Environment.SystemDirectory;*/
-            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-
-            MessageBox.Show(projectDirectory);
-        }
-
         //add address into combobox
         dynamic json;
         dynamic Tinh;
@@ -105,95 +82,17 @@ namespace GUI {
             }
         }
 
-        //Structs
-        private struct RGBColors {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
-            public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
-            public static Color color6 = Color.FromArgb(24, 161, 251);
-        }
-        //Methods
-        private void ActivateButton(object senderBtn, Color color) {
-            if (senderBtn != null) {
-                DisableButton();
-                //Button
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
-                //Current Child Form Icon
-                iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                iconCurrentChildForm.IconColor = color;
-            }
-        }
-        private void DisableButton() {
-            if (currentBtn != null) {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
-                currentBtn.ForeColor = Color.Gainsboro;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.Gainsboro;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            }
-        }
-        private void OpenChildForm(Form childForm) {
-            //open only form
-            if (currentChildForm != null) {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
-        }
-        private void Reset() {
-            DisableButton();
-            if (currentChildForm != null) {
-                currentChildForm.Close();
-            }
-            leftBorderBtn.Visible = false;
-            iconCurrentChildForm.IconChar = IconChar.Home;
-            iconCurrentChildForm.IconColor = Color.MediumPurple;
-            lblTitleChildForm.Text = "Home";
-        }
-        //Events
-        //Reset
+      
         private void btnHome_Click(object sender, EventArgs e) {
-            Reset();
         }
 
         private void btnDangKyTro_Click(object sender, EventArgs e) {
             if(BUS_User.UserAuth == null) {
-                OpenChildForm(GUI_Login.GetInstance);
+                GUI_Login.GetInstance.Show();
             }
             else FormDangKyTro.GetInstance.Show();
         }
 
-        //Drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e) {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
         //Close-Maximize-Minimize
         private void btnExit_Click(object sender, EventArgs e) {
             Application.Exit();
@@ -211,26 +110,13 @@ namespace GUI {
         private void btnMinimize_Click(object sender, EventArgs e) {
             WindowState = FormWindowState.Minimized;
         }
-        //Remove transparent border in maximized state
-        private void FormMainMenu_Resize(object sender, EventArgs e) {
-            if (WindowState == FormWindowState.Maximized) {
-                FormBorderStyle = FormBorderStyle.None;
-                btnMaximize.IconChar = IconChar.Minimize;
-            }
-            else {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                btnMaximize.IconChar = IconChar.Maximize;
-            }
-        }
-
+       
         private void btnClose_Click(object sender, EventArgs e) {
             Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
-            Reset();
-            if(currentChildForm == null || currentChildForm.Text != "Login")
-                OpenChildForm(GUI_Login.GetInstance);
+            GUI_Login.GetInstance.Show();
         }
 
         private void lock_Unlock(bool isLogin) {
@@ -256,7 +142,6 @@ namespace GUI {
             if (BUS_User.UserAuth != null) {
                 btnLogin.Text = BUS_User.UserAuth.name;
                 btnLogin.Click -= btnLogin_Click;
-                Reset();
             }
         }
 
@@ -267,7 +152,6 @@ namespace GUI {
             btnLogin.Text = "Login";
             btnLogin.Click += btnLogin_Click;
             lock_Unlock(BUS_User.isLogin);
-            Reset();
         }
 
         private void home_Host1_Click(object sender, EventArgs e) {

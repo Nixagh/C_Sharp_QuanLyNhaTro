@@ -42,6 +42,9 @@ namespace GUI.Forms.Host {
             this.label1 = new System.Windows.Forms.Label();
             this.btnChooseFile = new System.Windows.Forms.Button();
             this.picImage = new System.Windows.Forms.PictureBox();
+            this.txtTinh = new System.Windows.Forms.TextBox();
+            this.txtHuyen = new System.Windows.Forms.TextBox();
+            this.txtXa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +142,7 @@ namespace GUI.Forms.Host {
             this.cmbXa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbXa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbXa.FormattingEnabled = true;
-            this.cmbXa.Location = new System.Drawing.Point(948, 182);
+            this.cmbXa.Location = new System.Drawing.Point(950, 216);
             this.cmbXa.Name = "cmbXa";
             this.cmbXa.Size = new System.Drawing.Size(200, 33);
             this.cmbXa.TabIndex = 25;
@@ -150,7 +153,7 @@ namespace GUI.Forms.Host {
             this.cmbHuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbHuyen.FormattingEnabled = true;
-            this.cmbHuyen.Location = new System.Drawing.Point(670, 182);
+            this.cmbHuyen.Location = new System.Drawing.Point(670, 216);
             this.cmbHuyen.Name = "cmbHuyen";
             this.cmbHuyen.Size = new System.Drawing.Size(200, 33);
             this.cmbHuyen.TabIndex = 24;
@@ -159,10 +162,11 @@ namespace GUI.Forms.Host {
             // cmbTinh
             // 
             this.cmbTinh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbTinh.DisplayMember = "sdsd";
             this.cmbTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTinh.FormattingEnabled = true;
-            this.cmbTinh.Location = new System.Drawing.Point(384, 182);
+            this.cmbTinh.Location = new System.Drawing.Point(384, 216);
             this.cmbTinh.Name = "cmbTinh";
             this.cmbTinh.Size = new System.Drawing.Size(200, 33);
             this.cmbTinh.TabIndex = 23;
@@ -252,12 +256,42 @@ namespace GUI.Forms.Host {
             this.picImage.TabIndex = 16;
             this.picImage.TabStop = false;
             // 
+            // txtTinh
+            // 
+            this.txtTinh.Enabled = false;
+            this.txtTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTinh.Location = new System.Drawing.Point(384, 173);
+            this.txtTinh.Name = "txtTinh";
+            this.txtTinh.Size = new System.Drawing.Size(199, 31);
+            this.txtTinh.TabIndex = 34;
+            // 
+            // txtHuyen
+            // 
+            this.txtHuyen.Enabled = false;
+            this.txtHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHuyen.Location = new System.Drawing.Point(670, 173);
+            this.txtHuyen.Name = "txtHuyen";
+            this.txtHuyen.Size = new System.Drawing.Size(199, 31);
+            this.txtHuyen.TabIndex = 34;
+            // 
+            // txtXa
+            // 
+            this.txtXa.Enabled = false;
+            this.txtXa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXa.Location = new System.Drawing.Point(948, 173);
+            this.txtXa.Name = "txtXa";
+            this.txtXa.Size = new System.Drawing.Size(199, 31);
+            this.txtXa.TabIndex = 34;
+            // 
             // FromSuaThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(1185, 593);
+            this.Controls.Add(this.txtXa);
+            this.Controls.Add(this.txtHuyen);
+            this.Controls.Add(this.txtTinh);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtFaceBook);
@@ -306,5 +340,8 @@ namespace GUI.Forms.Host {
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnChooseFile;
         private System.Windows.Forms.PictureBox picImage;
+        private System.Windows.Forms.TextBox txtTinh;
+        private System.Windows.Forms.TextBox txtHuyen;
+        private System.Windows.Forms.TextBox txtXa;
     }
 }

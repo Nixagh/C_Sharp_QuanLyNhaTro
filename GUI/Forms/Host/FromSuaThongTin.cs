@@ -57,6 +57,8 @@ namespace GUI.Forms.Host {
         }
 
         private void cmbTinh_SelectedValueChanged(object sender, EventArgs e) {
+            cmbXa.Items.Clear();
+            cmbHuyen.Items.Clear();
             foreach (var doc in json) {
                 if (doc["Name"].ToString() == cmbTinh.Text) {
                     Tinh = doc;
@@ -69,6 +71,7 @@ namespace GUI.Forms.Host {
         }
 
         private void cmbHuyen_SelectedValueChanged(object sender, EventArgs e) {
+            cmbXa.Items.Clear();
             foreach (var doc in Tinh["Districts"]) {
                 if (doc["Name"].ToString() == cmbHuyen.Text) {
                     Huyen = doc;
